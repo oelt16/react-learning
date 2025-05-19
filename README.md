@@ -77,3 +77,37 @@ const state = {
     setValue(val) => value = val
 
 }
+
+# 6 useEffect 
+
+vamos a escribir un hook (enganche) de react; en concreto un useEffect
+
+useState nos da un hook que crea un estado y nos da la posibilidad de leer y escribir
+
+useEffect = "nos ayuda a controlar el ciclo de vida del componente": es para syncronizar con entidades externas (por ejemplo para operaciones async, como llamadas a API, parametros de entrada..., context...; por ejemplo el padre me pasa una prop, y uso el useEffect para que cada vez que cambie, ejecute cierte lógica)
+siempre es para algo 'de afuera'; 
+
+SE PUEDE USAR mÁS de 1 USEEFFECT, tal vez para diferentes variables...
+
+  - acepta un metodo  => la lógica que va a ejecutar el useEffect:
+        => que logica? cuando se ejecuta? se ejecuta:
+        - 1 al montar el componente
+        - 2 cada vez que se modifique uno de los valores del state (de los que están en el arreglo de dependencias!)
+        - si no se pasa arreglo de dependencias, se ejecuta cada vez que cambia cualquier valor del state
+
+        si pongo un return, va a ejecutarse cada vez que el componente muera; 
+  - acepta un arreglo de dependencias
+
+useEffect NO ES para variables INTERNAS!
+
+ ej: 
+ 
+ const [loading, setLoading] = useState(false)
+ useEffect(()=>{console.info(loading) },[loading]) => MAL USADO, se va a ejecutar, pero no hace falta el useEffect...
+
+ const consoleLoader = (loadingValue:boolean) => {
+    console.info(loading)
+ } => BIEN USADO, lo uso cada vez que cambio el loading, y no uso un useEffect mal;
+
+
+
