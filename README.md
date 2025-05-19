@@ -42,3 +42,11 @@ qué es un commit (en react) => es cuando React compara DOM vs DOM Virtual y apl
 trigger => (user hace un pedido)
 renderiza => (el chef hace el plato, ejecuta el componente)
 commit => (el mozo ve la mesa que no tiene plato, y le entrega el plato)
+
+
+# 4 Componentes en React
+
+Componentes = funcion que se ejecuta y cuyo resultado se mete en el html. Ex: main.tsx => create root => mete <App/> que es una funcion... (componente)
+JSX = poner html y js junto => retorna HTML con lógica
+
+Componente : tiene que ser la MÍNIMA UNIDAD DE LÓGICA POSIBLE; 
