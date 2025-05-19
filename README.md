@@ -50,3 +50,30 @@ Componentes = funcion que se ejecuta y cuyo resultado se mete en el html. Ex: ma
 JSX = poner html y js junto => retorna HTML con lógica
 
 Componente : tiene que ser la MÍNIMA UNIDAD DE LÓGICA POSIBLE; 
+
+# 5 useState
+componente tonto = no estado
+componente inteligente = tiene logica (y estado normalmente)
+
+reders:
+    1=mount (al montar el componente)
+    2=cuando cambia el estado
+    3=async (fetch)
+
+
+let localCount = 0;
+const increaseLocalCount = () => { localCount += 1; console.log(localCount); } => No funciona si pongo en mi button ${localcount} y {increaseLocalCount}
+
+useState = bindear (relacionar) una variable para que luego se pueda usar en el render; también devuelve una función para modificarlo
+
+si uso el setCount varias veces, se guardan y se ejecutan todo al final (batching):
+setCount((count) => count +1) => tomo primero el (count)!! entonces funciona
+en cambio setCount(count + 1) => toma el count y le añade un 1 => 
+
+batching = el render lo hace al terminar toda la ejecución de la lógica; 
+const state = {
+    value : 0,
+    getValue: () => value,
+    setValue(val) => value = val
+
+}
