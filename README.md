@@ -111,3 +111,6 @@ useEffect NO ES para variables INTERNAS!
 
 
 
+# 7 Custom Hooks! 
+Ya usamos useState y useEffect; pero queremos hacer uno nuestro => useFetch
+
