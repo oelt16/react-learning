@@ -1,25 +1,34 @@
+import { useEffect, type ReactNode } from 'react';
 import './App.css'
-import { useFetch } from './hooks';
+import { Button } from './components'
+import { shareValueChildren } from './services'
 
-interface Data{
-  name : string,
-  lastName: string,
-  age: number
+
+interface FormProps {
+  children : ReactNode
+}
+const Form = ({children}: FormProps) => {
+  return (
+    <form>
+      {children}
+    </form>
+  ) 
 }
 
-const url = "https://jsonplaceholder.typicode.com/posts";
 function App() {
-
-  const {data, error, loading} = useFetch<Data>(url)
-
-
   
+  const service = shareValueChildren;
+  const handleClick = () => {
+    console.log('click')
+  }
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error}</p>
+  useEffect(() => {
+    service.setValue('hola')
+  }, [])
+
   return (
     <>
-      <div>{JSON.stringify(data)}</div>
+      <Button parentMethod={handleClick}><div>My Label</div></Button>
     </>
   )
 }

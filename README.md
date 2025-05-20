@@ -114,3 +114,25 @@ useEffect NO ES para variables INTERNAS!
 # 7 Custom Hooks! 
 Ya usamos useState y useEffect; pero queremos hacer uno nuestro => useFetch
 
+# 8 Composition Pattern
+
+El patrón composition, no es algo de React, si no general.
+
+¿como compartir info de padrea a hijo? Props, context, 
+
+JSX.element = elemento de jsx <> = <fragment> => 
+ReactNode = todas las cosas que React puede renderizar
+
+
+Patron composition = nos permite reutilizar nuestro código:
+
+interface ChildrenProps {
+    children: ReactNode
+}
+export const ColorRed  = ({children} : ChildrenProps) => {
+    return (<div style={{"color":"red"}}>{children} </div>)
+}
+
+La lógica del padre en el padre, la del hijo en el hijo; hay que separar!
+
+high order component = 
