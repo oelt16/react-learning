@@ -135,4 +135,6 @@ export const ColorRed  = ({children} : ChildrenProps) => {
 
 La lógica del padre en el padre, la del hijo en el hijo; hay que separar!
 
-high order component = 
+# 9 Formularios React con Zod
+
+Checkear ReactForm

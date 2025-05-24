@@ -19,7 +19,8 @@ type FormValues = z.infer<typeof schema>; //No hace falta volver a crear el type
 const CustomForm = () => {
 
     const {control, handleSubmit, formState: {errors}} = useForm<FormValues>({
-        resolver: zodResolver(schema)
+        resolver: zodResolver(schema),  
+        mode: "onBlur"
     });
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
